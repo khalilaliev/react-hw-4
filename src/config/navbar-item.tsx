@@ -1,12 +1,7 @@
-// import { INavbar } from "../interfaces/navbar-interface";
-// import Home from "../pages/Home";
-// import Users from "../pages/Users";
-// import UsersInfo from "../pages/UsersInfo";
-
 import { INavbar } from "../interfaces/navbar-interface";
 import Home from "../pages/Home";
 import Users from "../pages/Users";
-import UsersInfo from "../pages/UsersInfo";
+// import UsersInfo from "../pages/UsersInfo";
 
 export const NAVBAR_ITEM: INavbar[] = [
   {
@@ -19,9 +14,9 @@ export const NAVBAR_ITEM: INavbar[] = [
     element: <Users />,
     path: "/users",
   },
-  {
-    title: "UsersInfo",
-    element: <UsersInfo />,
-    path: "/usersInfo",
-  },
+  // {
+  //   title: "UsersInfo",
+  //   element: <UsersInfo />,
+  //   path: "/usersInfo",
+  // },
 ];

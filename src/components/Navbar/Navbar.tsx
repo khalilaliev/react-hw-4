@@ -1,7 +1,8 @@
 import { NavLink, Route, Routes, useLocation } from "react-router-dom";
 import { NAVBAR_ITEM } from "../../config/navbar-item";
+import React from "react";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const { pathname } = useLocation();
   return (
     <>

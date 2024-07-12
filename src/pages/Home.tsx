@@ -1,7 +1,10 @@
+import Title from "../components/Title/Title";
+import { HOME_TEXT } from "../constants/page-title-text";
+
 const Home = () => {
   return (
     <>
-      <h1>Home page</h1>
+      <Title text={HOME_TEXT} />
     </>
   );
 };
