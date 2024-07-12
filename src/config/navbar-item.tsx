@@ -15,7 +15,7 @@ export const NAVBAR_ITEM: INavbar[] = [
     path: "/users",
     userInfo: [
       {
-        path: "/:id",
+        path: ":id",
         element: <User />,
       },
     ],
