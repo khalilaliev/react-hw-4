@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import Title from "../Title/Title";
 import { API } from "../../utils/user-api";
-import UserList from "./UsersListItem";
+// import UserList from "./UsersListItem";
 import { IUser } from "../../interfaces/user-data";
 import { USERS } from "../../constants/page-title-text";
+import UserListItem from "./UsersListItem";
 
 const User: React.FC = () => {
   const [users, setUsers] = useState<IUser[]>([]);
@@ -25,7 +26,7 @@ const User: React.FC = () => {
     <>
       <div className="container">
         <Title text={USERS} />
-        <UserList users={users} />
+        <UserListItem users={users} />
       </div>
     </>
   );

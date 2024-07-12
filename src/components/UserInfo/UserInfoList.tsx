@@ -12,8 +12,8 @@ const UserInfoList: React.FC<UserInfoListProps> = ({ users }) => {
         <div className="card" key={user.id}>
           <div className="card-body">
             <h2 className="card-header">{user.name}</h2>
-            <p className="text-content2">{user.email}</p>
-            <p className="text-content2">{user.phone}</p>
+            <p className="text-content2">Mail: {user.email}</p>
+            <p className="text-content2">Phone: {user.phone}</p>
           </div>
         </div>
       ))}

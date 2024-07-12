@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { API } from "../../utils/user-api";
 import { IUser } from "../../interfaces/user-data";
 import UserInfoList from "./UserInfoList";
+import Title from "../Title/Title";
+import { USER } from "../../constants/page-title-text";
 
 const User = () => {
   const [users, setUsers] = useState<IUser[]>([]);
@@ -24,6 +26,7 @@ const User = () => {
 
   return (
     <div className="container">
+      <Title text={USER} />
       <UserInfoList users={users} />
     </div>
   );

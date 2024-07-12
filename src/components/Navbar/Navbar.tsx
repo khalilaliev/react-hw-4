@@ -2,9 +2,11 @@ import { NavLink, Route, Routes, useLocation } from "react-router-dom";
 import { NAVBAR_ITEM } from "../../config/navbar-item";
 import React from "react";
 import NotFound from "../../pages/NotFound";
+import User from "../UserInfo/User";
 
 const Navbar: React.FC = () => {
   const { pathname } = useLocation();
+
   return (
     <>
       <div className="navbar">
@@ -25,6 +27,7 @@ const Navbar: React.FC = () => {
           ))}
         </div>
       </div>
+
       <Routes>
         {NAVBAR_ITEM.map((item) => (
           <Route key={item.path} path={item.path} element={item.element}>
@@ -38,6 +41,7 @@ const Navbar: React.FC = () => {
               ))}
           </Route>
         ))}
+        <Route path="/users/:id" element={<User />} />{" "}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
