@@ -1,11 +1,15 @@
 import React from "react";
 import { IUser } from "../../interfaces/user-data";
+import Spinner from "../Spinner/Spinner";
 
 interface UserInfoListProps {
   users: IUser[];
 }
 
 const UserInfoList: React.FC<UserInfoListProps> = ({ users }) => {
+  if (!users || users.length === 0) {
+    return <Spinner />;
+  }
   return (
     <div className="flex justify-center items-center gap-5 flex-wrap">
       {users.map((user) => (
