@@ -1,33 +1,31 @@
 import { useEffect, useState } from "react";
-import Title from "../Title/Title";
+import { useParams } from "react-router-dom";
 import { API } from "../../utils/user-api";
-import UserList from "./UserList";
 import { IUser } from "../../interfaces/user-data";
-import { USERS } from "../../constants/page-title-text";
+import UserInfoList from "./UserInfoList";
 
-const User: React.FC = () => {
+const User = () => {
   const [users, setUsers] = useState<IUser[]>([]);
+  const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
     const getUserData = async () => {
       try {
-        const res = await fetch(API);
-        if (!res.ok) throw new Error("Users not found");
+        const res = await fetch(`${API}/${id}`);
+        if (!res.ok) throw new Error("User not found");
         const data = await res.json();
-        setUsers(data);
+        setUsers([data]);
       } catch (e) {
         if (e instanceof Error) console.error(e.message);
       }
     };
     getUserData();
-  }, []);
+  }, [id]);
+
   return (
-    <>
-      <div className="container">
-        <Title text={USERS} />
-        <UserList users={users} />
-      </div>
-    </>
+    <div className="container">
+      <UserInfoList users={users} />
+    </div>
   );
 };
 

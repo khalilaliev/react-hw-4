@@ -1,7 +1,7 @@
+import User from "../components/Users/UsersList";
 import { INavbar } from "../interfaces/navbar-interface";
 import Home from "../pages/Home";
 import Users from "../pages/Users";
-// import UsersInfo from "../pages/UsersInfo";
 
 export const NAVBAR_ITEM: INavbar[] = [
   {
@@ -13,10 +13,11 @@ export const NAVBAR_ITEM: INavbar[] = [
     title: "Users",
     element: <Users />,
     path: "/users",
+    userInfo: [
+      {
+        path: "/:id",
+        element: <User />,
+      },
+    ],
   },
-  // {
-  //   title: "UsersInfo",
-  //   element: <UsersInfo />,
-  //   path: "/usersInfo",
-  // },
 ];

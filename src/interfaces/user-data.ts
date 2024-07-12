@@ -5,6 +5,10 @@ export interface IUser {
   phone?: string;
 }
 
-export interface IUserData {
+export interface IUsers {
   users: IUser[];
 }
+
+// export interface IUserData {
+//   user: IUser[];
+// }
